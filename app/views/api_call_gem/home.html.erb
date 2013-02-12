@@ -1,0 +1,30 @@
+
+<div>
+	<h1 align=center>Job ID Search</h1>
+</div>
+
+<div>
+	<%= form_tag("/api_call_gem/home", :method => "get") do %>
+		<div>
+			<%= label_tag(:q1, "Job ID:") %>
+			 <%= text_field_tag(:value1) %>
+		</div>
+		<div>
+			<%= label_tag(:q2, "Response") %>
+			<%= text_area_tag(@returnValue) %>
+		</div>
+		<span>
+		  <%= submit_tag("Submit") %>
+		</span>
+	</div>
+		  	
+	<%end%>
+
+	<code>
+		<% if !@returnValue.blank? %>
+			<%= debug @returnValue %>
+		<% end %>
+	</code>
+
+</div>
+</p>
